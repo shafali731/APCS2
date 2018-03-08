@@ -1,0 +1,11 @@
+Shafali Gupta
+APCS2 pd 1
+hw 09 - Yaaasss Queens
+2018 - 02- 27
+
+You know each is solvable as long as n in the nXn board is greater than 3.
+That  is because if you start out putting one queen, it takes over most
+of the spaces, not giving it enough spaces to put down more queens.
+You can check how many solutions there are by starting out with n solutions
+and then finding which ones are just reflections of each other. If they are
+reflections. then you count them as one solution instead of 2.

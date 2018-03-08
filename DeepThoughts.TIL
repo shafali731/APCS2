@@ -1,0 +1,40 @@
+Team Genius  -- Kevin Feng, Shafali Gupta. James Huang
+
+APCS2 pd02
+
+HW14 -- KnightTour
+
+2018-03-06   
+
+  Mean execution times for boards of size n*n:
+  n=5   .083s  over 10 executions 
+  n=6   1.23s    over 10 executions
+  n=7   2.28s    over 10 executions
+  n=8   2.64s    over 10 executions
+
+Section Uno:
+Q1: From any starting position, can an open tour always be found? Explain.
+No, not necessarily. For the 4X4 chessboard, the algorithm we used could not find a Knight’s Tour from the starting position of 0,0. This means that not all starting positions can lead to an open tour. The algorithm basically backtracked all the way to move zero, which means it tried every single combination
+Q2: Same, but for closed tour.
+No, not necessarily. For the same reasons as Q1, if it is not possible to traverse all squares, then there is no way of doing a closed tour either. If there isn’t an open tour combination found, then there is no possible combination, including one where the knight ends up one move from where it started.
+Q3: How do you explain the increase in execution time as n increases?
+Because the algorithm works by going as far as it can with respect to number of moves. For example, it may go up to move n-3, but then it finds that there are no possible moves. It then backtracks. It tests out every single combination for n-4, and if it can’t find a possibility, it keeps on backtracking until a solution is found. Since it explores all the combinations of possible moves, as the number of squares increase(grid size increases), the number of moves needed to do a successful Knights tour will increase, exponentially(its actually increasing combination wise). However, on our machines, a larger sized chess board may have more processor power allocated, which might mitigate the time increase.
+Q4: Thoughts on optimization?
+If we plan out more than one move ahead, we can reduce the number of moves considerably. This can be done by checking the number of solutions one move ahead BEFORE performing the move. This will considerably reduce the amount of backtracking. While backtracking IS unavoidable, we can reduce the number of combinations we have to explore, especially in moves with higher numbers. 
+
+Section Deux:
+State your cleanest algo for finding your way out of the maze.
+You start out in one direction until you cannot move in that direction. Check if you can move in any other direction. If you cannot, then go back on move and try a different direction. More specifically, we will default on always making a right turn, if that doesn;t work,  then moving forward, then moving left, then moving backwards. Our algorithm basically follows the maxim of following the right wall to the exit path. If there is a dead end, it will backtrack until it reaches a new path. If it has already explored a path, it will not explore it anymore(marked by a new symbol!)
+Pseudocode:
+solutionFinder(int x, int y)
+if(we are on the exit)
+Return;
+if(the coordinate is NOT a path)
+Return;
+else(
+Current location== symbol for already traversed path
+solutionFinder(x+1,y);
+solutionFinder(x,y+1);
+//each possibility of move is explored!
+)
+

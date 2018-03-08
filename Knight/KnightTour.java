@@ -1,7 +1,7 @@
 /* Shafali Gupta
    APCS2 - pd 01
    HW 13 - We On Award TourFinder
-   2018-03-05 */    
+   2018-03-05 */
 
 /*======================================
   class KnightTour
