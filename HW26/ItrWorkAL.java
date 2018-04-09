@@ -123,6 +123,8 @@ public class ItrWorkAL
 	System.out.println("\nTesting removeEvens...");
 	removeEvens(L);
 	for( int n : L ) System.out.println(n);
+
+
   /*~~~~~~~~~~~~~~~m~o~v~e~~m~e~~d~o~w~n~~~~~~~~~~~~~~
 
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
