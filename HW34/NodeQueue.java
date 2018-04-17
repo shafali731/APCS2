@@ -70,6 +70,5 @@ public class NodeQueue<T> implements Queue<T>
 	System.out.println( thing.dequeue() );
 
 	System.out.println( thing.dequeue() );
-
   }
 }

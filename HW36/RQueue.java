@@ -1,3 +1,7 @@
+//Team TheTheLightDark (Shafali Gupta Lynne Wang)
+//APCS2 -pd 01
+//HW36 - Now Let’s Consider You Lot at Fake Terry’s
+//2018 - 04 -17
 /*****************************************************
  * class RQueue
  * A linked-list-based, randomized queue
@@ -12,7 +16,6 @@
  *      _end -^                     ^- _front
  *
  ******************************************************/
-
 
 public class RQueue<T> implements Queue<T>
 {
@@ -49,13 +52,24 @@ public class RQueue<T> implements Queue<T>
   // assume _queue ! empty
   public T dequeue()
   {
+    if (isEmpty()){
+      return null;
+    }
     sample();
+    return (dequeueS());
+    // T temp = _front.getValue();
+    // _front = _front.getNext();
+    // _size--;
+    // return temp;
+  }//end dequeue()
+
+  public T dequeueS()
+  {
     T temp = _front.getValue();
     _front = _front.getNext();
     _size--;
     return temp;
   }//end dequeue()
-
 
   public T peekFront()
   {
@@ -71,16 +85,9 @@ return  _front.getValue();
    ******************************************/
   public void sample ()
   {
-    // _front = getFirst();
-    // int _temp = 0;
-    // _temp= (int)(Math.random()*_size);
-    // for(int i = 0; i<_temp; i++){
-    //   _front= getNext();
-    // }
-
     int temp = (int)(Math.random()*_size);
     while (temp != 0){
-      enqueue(dequeue());
+      enqueue(dequeueS());
       temp --;
     }
   }//end sample()
